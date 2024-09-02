@@ -1,23 +1,36 @@
 package JunitDemo;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LOginDemo {
+public class LOginDemo2 {
 
+    WebDriver driver;
+  //  int i;
 
+    @Before // method below this annotation runs before every test method
+    public void openBrowser()
+    {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+    }
 
+    @After // method below this annotation runs before every test method
+    public void closeBrowser() throws InterruptedException {
+        Thread.sleep(4000);
+        driver.close();
+    }
 
     @Test
     public void loginTest1()
     {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+       // System.out.println(i); // 0
         driver.get("https://stock.scriptinglogic.in/");
-
         WebElement txtUsername = driver.findElement(By.id("login-username"));
         txtUsername.sendKeys("admin");
 
@@ -25,14 +38,12 @@ public class LOginDemo {
         txtPassword.sendKeys("admin");
 
         WebElement btnLogin = driver.findElement(By.name("submit"));
-        btnLogin.click();
+       // btnLogin.click();
     }
     @Test
     public void loginTest2()
     {
-        WebDriver driver = new ChromeDriver();
 
-        driver.manage().window().maximize();
         driver.get("https://stock.scriptinglogic.in/");
 
         WebElement txtUsername = driver.findElement(By.id("login-username"));
@@ -42,15 +53,13 @@ public class LOginDemo {
         txtPassword.sendKeys("dsdsd");
 
         WebElement btnLogin = driver.findElement(By.name("submit"));
-        btnLogin.click();
+       // btnLogin.click();
     }
 
     @Test
     public void loginTest3()
     {
-        WebDriver driver = new ChromeDriver();
 
-        driver.manage().window().maximize();
         driver.get("https://stock.scriptinglogic.in/");
 
         WebElement txtUsername = driver.findElement(By.id("login-username"));
@@ -60,6 +69,6 @@ public class LOginDemo {
         txtPassword.sendKeys("");
 
         WebElement btnLogin = driver.findElement(By.name("submit"));
-        btnLogin.click();
+      //  btnLogin.click();
     }
 }
