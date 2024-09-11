@@ -5,19 +5,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TutorialsSites {
-    WebDriver driver;
+public class TutorialsSites extends Base {
 
-    @BeforeClass
-    public void openBrowser() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
-
-    @AfterClass
-    public void closeBrowser() throws InterruptedException {
-        driver.close();
-    }
 
     @Test
     public void w3schools() {

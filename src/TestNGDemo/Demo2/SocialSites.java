@@ -5,19 +5,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SocialSites {
-    WebDriver driver;
+public class SocialSites extends Base {
 
-    @BeforeClass
-    public void openBrowser() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
-
-    @AfterClass
-    public void closeBrowser() throws InterruptedException {
-        driver.close();
-    }
 
     @Test
     public void facebook() {

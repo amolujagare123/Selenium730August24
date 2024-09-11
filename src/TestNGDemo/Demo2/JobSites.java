@@ -7,21 +7,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class JobSites {
+public class JobSites extends Base{
 
-    WebDriver driver;
-
-    @BeforeClass
-    public void openBrowser()
-    {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
-
-    @AfterClass
-    public  void closeBrowser() throws InterruptedException {
-        driver.close();
-    }
 
     @Test
     public void naukri() {

@@ -1,7 +1,7 @@
 <suite name="Real Sites">
 
-   <listeners>
-        <listener class-name="org.testng.reporters.EmailableReporter2"/>
+    <listeners>
+        <listener class-name="ExtentReports.util.ExtentReportListeners"/>
     </listeners>
 
     <test name ="Study sites">

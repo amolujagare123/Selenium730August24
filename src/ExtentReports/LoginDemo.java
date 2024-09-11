@@ -55,6 +55,8 @@ public class LoginDemo {
         test.info("URL is opened");
 
         WebElement txtUsername = driver.findElement(By.id("login-username"));
+
+
         txtUsername.sendKeys("admin");
         test.info("Username is Entered");
 
