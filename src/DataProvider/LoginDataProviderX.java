@@ -36,22 +36,22 @@ public class LoginDataProviderX {
         btnLogin.click();
     }
 
-    @DataProvider
-    Object[][] getData() throws IOException {
+        @DataProvider
+        Object[][] getData() throws IOException {
 
-        FileInputStream fis = new FileInputStream("Data/data2.xlsx");
-        XSSFWorkbook workbook = new XSSFWorkbook(fis);
-        XSSFSheet sheet = workbook.getSheet("Sheet1");
-        int rowCount = sheet.getPhysicalNumberOfRows();
-        Object[][] data = new Object[rowCount][2];
+            FileInputStream fis = new FileInputStream("Data/data2.xlsx");
+            XSSFWorkbook workbook = new XSSFWorkbook(fis);
+            XSSFSheet sheet = workbook.getSheet("Sheet1");
+            int rowCount = sheet.getPhysicalNumberOfRows();
+            Object[][] data = new Object[rowCount][2];
 
-        for(int i=0;i<rowCount ;i++)
-        {
-            XSSFRow row = sheet.getRow(i);
+            for(int i=0;i<rowCount ;i++)
+            {
+                XSSFRow row = sheet.getRow(i);
 
-            data[i][0] = row.getCell(0).toString();
-            data[i][1] =  row.getCell(1).toString();
-        }
+                data[i][0] = row.getCell(0).toString();
+                data[i][1] =  row.getCell(1).toString();
+            }
 
        /* data[0][0] = "admin";
         data[0][1] = "admin";
@@ -65,6 +65,6 @@ public class LoginDataProviderX {
         data[3][0] = "invalid-3";
         data[3][1] = "invalid-3";*/
 
-        return data;
+            return data;
     }
 }
